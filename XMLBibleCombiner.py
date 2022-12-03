@@ -1,6 +1,6 @@
 #%reset
 
-# LookUp Table fuer Unterschiede
+# LookUp Table for anomalies
 
 lookUp = {
 }
@@ -35,14 +35,14 @@ for b in root.findall('BIBLEBOOK'):
         print("Chapter: " + infochapter["cnumber"])
 
         if infobook["bname"] == "Offenbarung" and infochapter["cnumber"] == "23":
-            print("\n##### Vorlaufiges Ende erreicht! #####\n")
+            print("\n##### Reached the end! #####\n")
             break
         else:
             for char in c.findall('VERS'):
                 infoverse = char.attrib
                 z = z + 1
 
-                # Psalms special treatment
+                # Psalms special treatment. I had to do this, you might not need this. Just comment lines 46-64 in this case.
                 if str(infobook["bname"]) == "Psalmen" and int(infoverse["vnumber"]) == 1:
                     verse1 = root2[x][y][z].text
                     #print(verse1)
