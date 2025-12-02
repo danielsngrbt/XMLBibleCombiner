@@ -13,10 +13,10 @@ lookUp = {
 
 import xml.etree.ElementTree as ET
 
-german = ET.parse('german_S2000.xml')
-root = german.getroot()
-russian = ET.parse('russian.xml')
-root2 = russian.getroot()
+source_language = ET.parse('EnglishNASBBible.xml')
+root = source_language.getroot()
+added_language = ET.parse('russian.xml')
+root2 = added_language.getroot()
 
 x = -1
 y = -1
